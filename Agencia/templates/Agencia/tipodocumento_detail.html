@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_TipoDocumento_list' %}">
+    TipoDocumento Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Nombre</td><td>{{ object.Nombre }}</td></tr>
+    <tr><td>idTipoDocumento</td><td>{{ object.idTipoDocumento }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

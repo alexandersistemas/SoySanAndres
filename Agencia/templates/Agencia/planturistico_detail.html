@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_PlanTuristico_list' %}">
+    PlanTuristico Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>idPlan</td><td>{{ object.idPlan }}</td></tr>
+    <tr><td>Descripcion</td><td>{{ object.Descripcion }}</td></tr>
+    <tr><td>Capacidad</td><td>{{ object.Capacidad }}</td></tr>
+    <tr><td>Nombre</td><td>{{ object.Nombre }}</td></tr>
+    <tr><td>PrecioDolar</td><td>{{ object.PrecioDolar }}</td></tr>
+    <tr><td>PrecioPeso</td><td>{{ object.PrecioPeso }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Cupon_list' %}">
+    Cupon Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>FechaCreado</td><td>{{ object.FechaCreado }}</td></tr>
+    <tr><td>Porcentaje</td><td>{{ object.Porcentaje }}</td></tr>
+    <tr><td>idCupon</td><td>{{ object.idCupon }}</td></tr>
+    <tr><td>Cupon</td><td>{{ object.Cupon }}</td></tr>
+    <tr><td>FechaInicio</td><td>{{ object.FechaInicio }}</td></tr>
+    <tr><td>FechaFin</td><td>{{ object.FechaFin }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

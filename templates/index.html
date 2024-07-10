@@ -1,0 +1,100 @@
+
+{% extends "baseHome.html" %}
+{% block content %}
+
+
+
+    <!-- Speakers -->
+    <section id="speakers" class="mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center text-uppercase">
+            <h2>Servicios</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="static/assets/images/Bote-Fiesta.jpg" alt="Foto de San">
+              <div class="card-body">
+                <div class="badges">
+<!--                  <span class="badge badge-warning">140 Comprados</span>-->
+                  <span class="badge badge-info">Cupos Disponibles</span>
+                </div>
+                <h5 class="card-title">Bote Fiesta</h5>
+                <p class="card-text">Disfruta de rumba con familiares, amigos o extranjeros mientras navegas por sitios turisticos de la isla de San Andrés.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="static/assets/images/Casa-Museo.jpg" alt="Foto de San">
+              <div class="card-body">
+                <div class="badges">
+<!--                  <span class="badge badge-warning">57 Comprados</span>-->
+                  <span class="badge badge-info">Cupos Disponibles</span>
+                </div>
+                <h5 class="card-title">Casa Museo</h5>
+                <p class="card-text">La Casa Museo Isleña es un lugar dedicado a celebrar la cultura y costumbres de los nativos de San Andrés y Providencia. Dentro del museo se pueden conocer ejemplos típicos de la arquitectura, costumbres, bailes, música y gastronomía isleña.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="static/assets/images/Cueva-Morgan.jpg" alt="Foto de San">
+              <div class="card-body">
+                <div class="badges">
+<!--                  <span class="badge badge-warning">247 Comprados</span>-->
+                  <span class="badge badge-danger">5 cupos disponibles</span>
+                </div>
+                <h5 class="card-title">Cueva de Morgan</h5>
+                <p class="card-text">Una de las atracciones más mencionadas de San Andrés es esta curiosa cueva que encierra la historia de uno de los personajes más llamativos de los mares, el pirata Morgan. Sigue leyendo para descubrir lo que puedes encontrar en este rincón escondido.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="static/assets/images/Noche-Blanca.jpg" alt="Foto de San">
+              <div class="card-body">
+                <div class="badges">
+<!--                  <span class="badge badge-warning">87 Comprados</span>-->
+                  <span class="badge badge-danger">3 Cupos Disponibles</span>
+                </div>
+                <h5 class="card-title">Noche Blanca</h5>
+                <p class="card-text">Disfruta una Noche Blanca en San Andrés en un Catamarán llena de música, animación, romance, cena tipo buffet, rumba y momentos inolvidables junto a personas de todo el mundo. Conoce amigos y descubre qué es pasar una noche increíble sobre un barco en el caribe.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="static/assets/images/PortonVIP.jpeg" alt="Foto de San">
+              <div class="card-body">
+                <div class="badges">
+<!--                  <span class="badge badge-warning">98 Comprados</span>-->
+                  <span class="badge badge-info">Cupos Disponibles</span>
+                </div>
+                <h5 class="card-title"> <a  class="btn btn-outline-ligh" href="{% url 'pontonform' %}">Pontón VIP</a></h5>
+                <p class="card-text">Jhonny cay, Acuario, mantarrayas, manglares, recorridos realizados en cómodas y seguras embarcaciones acompañados de un guía.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="card">
+              <img class="card-img-top" src="static/assets/images/Vuelta-Isla.jpg" alt="Foto de San">
+              <div class="card-body">
+                <div class="badges">
+<!--                  <span class="badge badge-warning"> 345 Comprados</span>-->
+                  <span class="badge badge-info">Cupos Disponibles</span>
+                </div>
+                <h5 class="card-title">Vuelta a la Isla en chiva</h5>
+                <p class="card-text">Este exclusivo tour tiene una duración de 3 horas de recorrido alrededor de la isla, visitando diferentes sitios emblemáticos y de interés turístico de la Isla entre los que están la casa museo, la cueva de Morgan, la piscinita natural y el hoyo soplador.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Speakers -->
+
+
+{% endblock %}

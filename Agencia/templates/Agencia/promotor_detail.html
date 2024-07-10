@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Promotor_list' %}">
+    Promotor Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Nombres</td><td>{{ object.Nombres }}</td></tr>
+    <tr><td>PorcentajeComision</td><td>{{ object.PorcentajeComision }}</td></tr>
+    <tr><td>idPromotor</td><td>{{ object.idPromotor }}</td></tr>
+    <tr><td>NumeroDocumento</td><td>{{ object.NumeroDocumento }}</td></tr>
+    <tr><td>Apellidos</td><td>{{ object.Apellidos }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

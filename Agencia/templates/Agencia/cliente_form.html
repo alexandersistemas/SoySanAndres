@@ -1,0 +1,58 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Cliente_list' %}">
+    Cliente Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Telefono2">Telefono2: </label>
+  <input class="form-control col-sm-10" id="Telefono2" type="text" name="Telefono2" value="{{ object.Telefono2 }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaCreado">FechaCreado: </label>
+  <input class="form-control col-sm-10" id="FechaCreado" type="datetime-local" name="FechaCreado" value="{{ object.FechaCreado }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Direccion">Direccion: </label>
+  <input class="form-control col-sm-10" id="Direccion" type="text" name="Direccion" value="{{ object.Direccion }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Telefono1">Telefono1: </label>
+  <input class="form-control col-sm-10" id="Telefono1" type="text" name="Telefono1" value="{{ object.Telefono1 }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaNacimiento">FechaNacimiento: </label>
+  <input class="form-control col-sm-10" id="FechaNacimiento" type="date" name="FechaNacimiento" value="{{ object.FechaNacimiento }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="NumeroDocumento">NumeroDocumento: </label>
+  <input class="form-control col-sm-10" id="NumeroDocumento" type="text" name="NumeroDocumento" value="{{ object.NumeroDocumento }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Correo">Correo: </label>
+  <input class="form-control col-sm-10" id="Correo" type="text" name="Correo" value="{{ object.Correo }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Apellidos">Apellidos: </label>
+  <input class="form-control col-sm-10" id="Apellidos" type="text" name="Apellidos" value="{{ object.Apellidos }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Nombres">Nombres: </label>
+  <input class="form-control col-sm-10" id="Nombres" type="text" name="Nombres" value="{{ object.Nombres }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="idCliente">idCliente: </label>
+  <input class="form-control col-sm-10" id="idCliente" type="text" name="idCliente" value="{{ object.idCliente }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

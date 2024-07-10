@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_PlanTuristico_list' %}">
+    PlanTuristico Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="idPlan">idPlan: </label>
+  <input class="form-control col-sm-10" id="idPlan" type="text" name="idPlan" value="{{ object.idPlan }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Descripcion">Descripcion: </label>
+  <input class="form-control col-sm-10" id="Descripcion" type="text" name="Descripcion" value="{{ object.Descripcion }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Capacidad">Capacidad: </label>
+  <input class="form-control col-sm-10" id="Capacidad" type="number" name="Capacidad" value="{{ object.Capacidad }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Nombre">Nombre: </label>
+  <input class="form-control col-sm-10" id="Nombre" type="text" name="Nombre" value="{{ object.Nombre }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="PrecioDolar">PrecioDolar: </label>
+  <input class="form-control col-sm-10" id="PrecioDolar" type="number" name="PrecioDolar" value="{{ object.PrecioDolar }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="PrecioPeso">PrecioPeso: </label>
+  <input class="form-control col-sm-10" id="PrecioPeso" type="number" name="PrecioPeso" value="{{ object.PrecioPeso }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

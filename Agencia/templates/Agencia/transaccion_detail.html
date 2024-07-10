@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Transaccion_list' %}">
+    Transaccion Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>FechaCreado</td><td>{{ object.FechaCreado }}</td></tr>
+    <tr><td>idTransaccion</td><td>{{ object.idTransaccion }}</td></tr>
+    <tr><td>Valor</td><td>{{ object.Valor }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

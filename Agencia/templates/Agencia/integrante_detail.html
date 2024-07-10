@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Integrante_list' %}">
+    Integrante Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Apellidos</td><td>{{ object.Apellidos }}</td></tr>
+    <tr><td>idIntegrante</td><td>{{ object.idIntegrante }}</td></tr>
+    <tr><td>FechaCreado</td><td>{{ object.FechaCreado }}</td></tr>
+    <tr><td>Nombres</td><td>{{ object.Nombres }}</td></tr>
+    <tr><td>FechaNacimiento</td><td>{{ object.FechaNacimiento }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

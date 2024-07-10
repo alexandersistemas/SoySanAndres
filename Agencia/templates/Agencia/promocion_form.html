@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Promocion_list' %}">
+    Promocion Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaInicio">FechaInicio: </label>
+  <input class="form-control col-sm-10" id="FechaInicio" type="date" name="FechaInicio" value="{{ object.FechaInicio }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="idPromocion">idPromocion: </label>
+  <input class="form-control col-sm-10" id="idPromocion" type="text" name="idPromocion" value="{{ object.idPromocion }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Nombre">Nombre: </label>
+  <input class="form-control col-sm-10" id="Nombre" type="text" name="Nombre" value="{{ object.Nombre }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="PrecioPeso">PrecioPeso: </label>
+  <input class="form-control col-sm-10" id="PrecioPeso" type="number" name="PrecioPeso" value="{{ object.PrecioPeso }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Descripcion">Descripcion: </label>
+  <input class="form-control col-sm-10" id="Descripcion" type="text" name="Descripcion" value="{{ object.Descripcion }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaFin">FechaFin: </label>
+  <input class="form-control col-sm-10" id="FechaFin" type="date" name="FechaFin" value="{{ object.FechaFin }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="PrecioDolar">PrecioDolar: </label>
+  <input class="form-control col-sm-10" id="PrecioDolar" type="number" name="PrecioDolar" value="{{ object.PrecioDolar }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaCreado">FechaCreado: </label>
+  <input class="form-control col-sm-10" id="FechaCreado" type="datetime-local" name="FechaCreado" value="{{ object.FechaCreado }}" disabled>
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

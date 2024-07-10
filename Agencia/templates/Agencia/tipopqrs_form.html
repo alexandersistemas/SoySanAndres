@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_TipoPQRS_list' %}">
+    TipoPQRS Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Nombre">Nombre: </label>
+  <input class="form-control col-sm-10" id="Nombre" type="text" name="Nombre" value="{{ object.Nombre }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaCreado">FechaCreado: </label>
+  <input class="form-control col-sm-10" id="FechaCreado" type="datetime-local" name="FechaCreado" value="{{ object.FechaCreado }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="idTipoPQRS">idTipoPQRS: </label>
+  <input class="form-control col-sm-10" id="idTipoPQRS" type="text" name="idTipoPQRS" value="{{ object.idTipoPQRS }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

@@ -1,0 +1,186 @@
+{% load static %}
+<html>
+  <head>
+     <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Soy SanAndres</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/assets/css/index.css">
+    <link rel="stylesheet" href="/static/assets/css/ionicons.min.css">
+    <!-- 3rd party CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!-- DataTables CSS -->
+<!--    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>-->
+
+
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/js/jquery.chained.js"></script>
+
+
+    <!-- Favicon icon -->
+    <link rel="icon" href="/static/assets/images/favicon.ico" type="image/x-icon">
+    <!-- fontawesome icon -->
+<!--    <link rel="stylesheet" href="/static/assets/fonts/fontawesome/css/fontawesome-all.min.css">-->
+    <!-- animation css -->
+<!--    <link rel="stylesheet" href="/static/assets/plugins/animation/css/animate.min.css">-->
+    <!-- vendor css -->
+<!--    <link rel="stylesheet" href="/static/assets/css/style.css">-->
+      <!-- Bootstrap css -->
+<!--    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">-->
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  </head>
+  <body data-spy="scroll" data-target="#navbar" data-offset="57">
+        <!-- Header -->
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="/static/assets/images/SoySanAndres-logo2.png" alt="SoySanAndres">
+          Soy SanAndres
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#main">Opcion 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#speakers">Opcion 2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#place-time">Opcion 3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-platzi" href="#" data-toggle="modal" data-target="#modalCompra">Iniciar Sesion</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- /Header -->
+
+
+    <!-- Contenido principal -->
+    <div id="content" class="container">
+<!--      <h2>Home: <a href="{% url 'index' %}">SoySanAndres</a></h2>-->
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">{% block content %}{% endblock %}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instrucciones -->
+    <section id="place-time">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-6 pl-0 pr-0">
+            <img src="/static/assets/images/SanAndres.jpg" alt="SanAndres" />
+          </div>
+          <div class="col-12 col-lg-6 pt-4 pb-4">
+            <h2>San Andres</h2>
+            <p>
+              La Isla de San Andrés (conocida también como San Andrés Isla) es una isla colombiana del mar Caribe.
+              Es la más grande de las islas que forman parte del Archipiélago de San Andrés, Providencia y Santa Catalina,
+              con una extensión total de 26 km² siendo así, la isla más grande del país.
+            </p>
+            <a class="btn btn-outline-light" href="https://es.wikipedia.org/wiki/Isla_de_San_Andr%C3%A9s_(Colombia)">Conoce más</a>
+            <br><br><br>
+            <h2>Suscribete</h2>
+            <p>
+              Conoce novedades y ofertas
+            </p>
+            <form action="https://www.nautygo.com/newsletter/subscribe" class="subcribe-form bravo-subscribe-form bravo-form">
+                <input type="hidden" name="_token" value="WCJb21ksN10Ho0Ny9ggZcxJvOXUyy2JLatx8ino5"><div class="form-group">
+                      <input type="text" name="email" class="form-control email-input" placeholder="correo" style="width: 250px;" >
+                    <br>
+                    <button type="submit" class="btn btn-sa" data-toggle="modal">Subscribir
+                    </button>
+                </div>
+                <div class="form-mess"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Instrucciones -->
+
+   <!-- Footer -->
+    <footer id="footer" class="pb-4 pt-4">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12 col-lg">
+            <a href="#">Preguntas frecuentes</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Contáctanos</a>
+          </div>
+          <div class="col-12 col-lg">
+            <a href="#">Términos y condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalCompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Autenticación</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col">
+                  <div class="input-group mb-3">
+                    <label class="form-label" for="formCorreo">Correo:&nbsp;&nbsp;</label>
+                  </div>
+                  <div class="input-group mb-3">
+                     <input type="email" id="formCorreo" class="form-control" name="CORREO" value="{{correo}}"  />
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="form-label" for="formpwd">Contraseña:&nbsp;</label>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="password" id="formpwd" class="form-control" name="CORREO" value="{{correo}}" />
+                  </div>
+                </div>
+               </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-sa">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Modal -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="/static/assets/js/index.js"></script>
+  
+  </body>
+</html>

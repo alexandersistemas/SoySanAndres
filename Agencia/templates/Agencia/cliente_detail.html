@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Cliente_list' %}">
+    Cliente Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Telefono2</td><td>{{ object.Telefono2 }}</td></tr>
+    <tr><td>FechaCreado</td><td>{{ object.FechaCreado }}</td></tr>
+    <tr><td>Direccion</td><td>{{ object.Direccion }}</td></tr>
+    <tr><td>Telefono1</td><td>{{ object.Telefono1 }}</td></tr>
+    <tr><td>FechaNacimiento</td><td>{{ object.FechaNacimiento }}</td></tr>
+    <tr><td>NumeroDocumento</td><td>{{ object.NumeroDocumento }}</td></tr>
+    <tr><td>Correo</td><td>{{ object.Correo }}</td></tr>
+    <tr><td>Apellidos</td><td>{{ object.Apellidos }}</td></tr>
+    <tr><td>Nombres</td><td>{{ object.Nombres }}</td></tr>
+    <tr><td>idCliente</td><td>{{ object.idCliente }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}

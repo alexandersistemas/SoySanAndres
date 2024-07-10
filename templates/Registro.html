@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>Registro de Usuario</h2>
+    <br>
+
+ <form method="post" action="{% url 'registroform' %}" enctype="multipart/form-data">
+
+          {% csrf_token %}
+          {{form.errors}}
+
+         <!-- Nombre  de usuario input -->
+        <div class="container">
+            <div class="row">
+               <div class="form-group col-md-6">
+                  <label class="form-label" for="form6Example8">Nombres</label>
+                  <input type="text" id="form6Example8" class="form-control" name="Nombres" value="{{username}}" />
+               </div>
+               <div class="form-group col-md-6">
+                  <label class="form-label" for="form6Example4">Apellidos</label>
+                  <input type="text" id="form6Example4" class="form-control" name="Apellidos" value="{{nombre}}" />
+               </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+               <div class="form-group col-md-6">
+                  <label class="form-label" for="idTipoDocumento">Tipo de documento</label> <br>
+                  <select class="form-control" aria-label=".form-select-lg example" name="idTipoDocumento" id="idTipoDocumento" >
+                        <option value="-1">Seleccione...</option>
+                            {% for tipo in tipodoc %}
+                                <option value="{{ tipo.idTipoDocumento }}">{{ tipo.Nombre }}</option>
+                            {% endfor %}
+                  </select>
+               </div>
+               <div class="form-group col-md-6">
+                  <label class="form-label" for="formnumerodoc">Número de documento</label>
+                  <input type="text" id="formnumerodoc" class="form-control" name="NumeroDocumento" value="{{NumeroDocumento}}" />
+               </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="formfecha">Fecha Nacimiento </label>
+
+                    <input type="date"  id="formfecha"  class="form-control" name="FechaNacimiento" />
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label class="form-label" for="formdir">Dirección </label>
+                  <input type="text" id="formdir" class="form-control" name="Direccion" value="{{Direccion}}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+               <div class="form-group col-md-6">
+                  <label class="form-label" for="formteluno">Teléfono 1 </label>
+                  <input type="text" id="formteluno" class="form-control" name="Telefono1" value="{{Telefono1}}" />
+               </div>
+               <div class="form-group col-md-6">
+                  <label class="form-label" for="formteldos">Teléfono 2</label>
+                  <input type="text" id="formteldos" class="form-control" name="Telefono2" value="{{Telefono2}}" />
+               </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+               <div class="form-group col-md-6">
+                <label class="form-label" for="idPais">País</label> <br>
+                  <select class="form-control" aria-label=".form-select-lg example" name="idPais" id="idPais" >
+                        <option value="-1">Seleccione...</option>
+                            {% for itemPais in lstPais %}
+                                <option value="{{ itemPais.idPais }}">{{ itemPais.Nombre }}</option>
+                            {% endfor %}
+                  </select>
+               </div>
+               <div class="form-group col-md-6">
+                  <label class="form-label" for="idCiudad">Ciudad</label> <br>
+                  <select class="form-control" aria-label=".form-select-lg example" name="idCiudad" id="idCiudad" >
+                        <option value="-1">Seleccione...</option>
+                            {% for itemCiudad in lstCiudad%}
+                                <option value="{{ itemCiudad.idCiudad }}" data-chained="{{ itemCiudad.idPais }}">{{ itemCiudad.Nombre }}</option>
+                            {% endfor %}
+                  </select>
+               </div>
+            </div>
+        </div>
+
+        <div class="container" >
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="form-label" for="formCorreo">Correo</label>
+                    <input type="email" id="formCorreo" class="form-control" name="Correo" value="{{Correo}}" />
+                </div>
+                 <div class="col">
+                       <label class="form-label" for="formpwd">Contraseña</label>
+                    <input type="password" id="formpwd" class="form-control" name="Password" value="{{Password}}" />
+                </div>
+            </div>
+        </div>
+
+
+            <!-- Mensajes de error -->
+        <div class="container">
+            <div class="row">
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+                           {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+
+        <!-- Botón de guardar -->
+        <div class="container" >
+            <div class="row">
+                <div class="col">
+                    <input type="submit" value="Guardar Usuario" class="btn btn-primary"/>
+                </div>
+            </div>
+        </div>
+        </form>
+
+      <script type="text/javascript" charset="utf-8">
+          $("#idCiudad").chained("#idPais");
+      </script>
+
+{% endblock %}

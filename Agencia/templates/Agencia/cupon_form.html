@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_Cupon_list' %}">
+    Cupon Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaCreado">FechaCreado: </label>
+  <input class="form-control col-sm-10" id="FechaCreado" type="datetime-local" name="FechaCreado" value="{{ object.FechaCreado }}" disabled>
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Porcentaje">Porcentaje: </label>
+  <input class="form-control col-sm-10" id="Porcentaje" type="number" name="Porcentaje" value="{{ object.Porcentaje }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="idCupon">idCupon: </label>
+  <input class="form-control col-sm-10" id="idCupon" type="text" name="idCupon" value="{{ object.idCupon }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="Cupon">Cupon: </label>
+  <input class="form-control col-sm-10" id="Cupon" type="text" name="Cupon" value="{{ object.Cupon }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaInicio">FechaInicio: </label>
+  <input class="form-control col-sm-10" id="FechaInicio" type="date" name="FechaInicio" value="{{ object.FechaInicio }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="FechaFin">FechaFin: </label>
+  <input class="form-control col-sm-10" id="FechaFin" type="date" name="FechaFin" value="{{ object.FechaFin }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

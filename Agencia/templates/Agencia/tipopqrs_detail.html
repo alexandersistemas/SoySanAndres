@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Agencia_TipoPQRS_list' %}">
+    TipoPQRS Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>Nombre</td><td>{{ object.Nombre }}</td></tr>
+    <tr><td>FechaCreado</td><td>{{ object.FechaCreado }}</td></tr>
+    <tr><td>idTipoPQRS</td><td>{{ object.idTipoPQRS }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
